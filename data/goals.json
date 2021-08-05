@@ -1,0 +1,89 @@
+[
+    {
+        "id": 1,
+        "text": "Choose lean proteins",
+        "action_set": [
+            {
+                "name": "what_else",
+                "specificity": "generic"
+            },
+            {
+                "name": "what_else_in",
+                "specificity": "meal_specific",
+                "filter": "isContainerFood",
+                "deep_search": false
+            },
+            {
+                "name": "what_kind",
+                "specificity": "meal_and_goal_specific",
+                "filter": "isAmbiguousProtein"
+            },
+            {
+                "name": "how_prepared",
+                "specificity": "meal_specific",
+                "filter": "isCookableFood",
+                "deep_search": false
+            },
+            {
+                "name": "fallback",
+                "specificity": "generic"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "text": "Eat no more than 2 portions of carbs in each meal",
+        "action_set": [
+            {
+                "name": "what_else",
+                "specificity": "generic"
+            },
+            {
+                "name": "what_else_in",
+                "specificity": "meal_specific",
+                "filter": "isContainerFood",
+                "deep_search": false
+            },
+            {
+                "name": "how_much_consistent",
+                "specificity": "meal_specific",
+                "filter": "isCarbohydrate"
+            },
+            {
+                "name": "fallback",
+                "specificity": "generic"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "text": "Make \u00bd my meal fruits and non-starchy vegetables",
+        "action_set": [
+            {
+                "name": "what_else",
+                "specificity": "generic"
+            },
+            {
+                "name": "what_else_in",
+                "specificity": "meal_specific",
+                "filter": "isContainerFood",
+                "deep_search": false
+            },
+            {
+                "name": "how_much_consistent",
+                "specificity": "meal_specific",
+                "filter": "isFruitVeg"
+            },
+            {
+                "name": "how_much_inconsistent",
+                "specificity": "meal_specific",
+                "filter": "isFruitVeg",
+                "filter_type": "not"
+            },
+            {
+                "name": "fallback",
+                "specificity": "generic"
+            }
+        ]
+    }
+]
